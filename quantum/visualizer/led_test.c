@@ -96,6 +96,11 @@ static uint8_t compute_gradient_color(float t, float index, float num) {
     return (uint8_t)(255.0f * v);
 }
 
+void set_brightness_all_leds(uint8_t luma) {
+    color_t color = LUMA2COLOR(luma);
+    gdispGClear(LED_DISPLAY, color);
+}
+
 bool keyframe_fade_in_all_leds(keyframe_animation_t* animation, visualizer_state_t* state) {
     (void)state;
     keyframe_fade_all_leds_from_to(animation, 0, 255);

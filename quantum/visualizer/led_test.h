@@ -27,6 +27,7 @@ SOFTWARE.
 
 #include "visualizer.h"
 
+void set_brightness_all_leds(uint8_t luma);
 bool keyframe_fade_in_all_leds(keyframe_animation_t* animation, visualizer_state_t* state);
 bool keyframe_fade_out_all_leds(keyframe_animation_t* animation, visualizer_state_t* state);
 bool keyframe_led_left_to_right_gradient(keyframe_animation_t* animation, visualizer_state_t* state);

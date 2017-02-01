@@ -95,6 +95,8 @@ void initialize_user_visualizer(visualizer_state_t* state) {
     state->current_lcd_color = LCD_COLOR(0x00, 0x00, 0xFF);
     state->target_lcd_color = LCD_COLOR(0x10, 0xFF, 0xFF);
     start_keyframe_animation(&startup_animation);
+    //~ start_keyframe_animation(&led_test_animation);
+	set_brightness_all_leds(20);
 }
 
 void update_user_visualizer_state(visualizer_state_t* state) {
@@ -119,3 +121,20 @@ void update_user_visualizer_state(visualizer_state_t* state) {
     start_keyframe_animation(&lcd_animation);
     start_keyframe_animation(&color_animation);
 }
+
+void user_visualizer_suspend(visualizer_state_t* state) {
+    state->layer_text = "Suspending...";
+    uint8_t hue = LCD_HUE(state->current_lcd_color);
+    uint8_t sat = LCD_SAT(state->current_lcd_color);
+    state->target_lcd_color = LCD_COLOR(hue, sat, 0);
+    start_keyframe_animation(&suspend_animation);
+}
+
+void user_visualizer_resume(visualizer_state_t* state) {
+    state->current_lcd_color = LCD_COLOR(0x00, 0x00, 0x00);
+    state->target_lcd_color = LCD_COLOR(0x10, 0xFF, 0xFF);
+    start_keyframe_animation(&resume_animation);
+    //~ start_keyframe_animation(&led_test_animation);
+ 	set_brightness_all_leds(20);
+}
+
