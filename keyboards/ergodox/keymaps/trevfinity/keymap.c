@@ -134,7 +134,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_TRNS, KC_TRNS, KC_AT,   KC_EXLM, KC_TRNS,
                                            KC_FN3, KC_FN4,
                                                     KC_TRNS,
-                                  KC_BTN1, KC_BTN2, KC_SLCK,
+                                  /*KC_BTN1, KC_BTN2, KC_SLCK,*/
+                                    KC_TRNS, KC_TRNS, KC_TRNS,
     // right hand
        RESET,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
        KC_PGUP, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, KC_MUTE, KC_MPLY,
@@ -214,7 +215,7 @@ void matrix_scan_user(void) {
         ergodox_right_led_2_off();
         ergodox_right_led_3_off();
         #ifdef SUBPROJECT_infinity
-            lcd_backlight_hal_color(1000, 1000, 5000);
+            lcd_backlight_hal_color(2500, 1000, 5000);
         #endif
         break;
 
@@ -225,7 +226,7 @@ void matrix_scan_user(void) {
         ergodox_right_led_1_off();
         ergodox_right_led_3_off();
         #ifdef SUBPROJECT_infinity
-            lcd_backlight_hal_color(0, 5000, 0);
+            lcd_backlight_hal_color(0, 5000, 1000);
         #endif
         break;
 
