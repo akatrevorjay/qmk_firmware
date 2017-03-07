@@ -89,23 +89,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Otherwise, it needs KC_*
 [BASE] = KEYMAP(  // layer 0 : default
     // left hand
-    KC_FN0,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,
-    CTL_T(KC_TAB), KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_DOWN,
-    GUI_T(KC_ESC), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,
-    SFT_T(KC_LPRN), CTL_T(KC_Z),    KC_X,    KC_C,    KC_V,    KC_B,    ALL_T(KC_NO),
-    TT(FNMM), KC_LGUI, KC_LGUI, KC_LALT, KC_LCTL,
-    KC_HOME, KC_END,
+    KC_FN0,         KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,
+    CTL_T(KC_TAB),  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_DOWN,
+    GUI_T(KC_ESC),  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,
+    SFT_T(KC_9),    CTL_T(KC_Z),    KC_X,    KC_C,    KC_V,    KC_B,    ALL_T(KC_NO),
+    TT(FNMM),       KC_LGUI, KC_LGUI, KC_LALT, KC_LCTL,
+    KC_HOME,        KC_END,
     TT(EZ),
-    GUI_T(KC_BSPC),  ALT_T(KC_DEL),  CTL_T(KC_ESC),
+    GUI_T(KC_BSPC), ALT_T(KC_DEL),  CTL_T(KC_ESC),
     // right hand
-    KC_FN0,  KC_7,    KC_8,    KC_9,    KC_0,    KC_EQL,  KC_BSLS,
-    KC_UP,   KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_MINS,
-    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-    MEH_T(KC_NO), KC_N,    KC_M,    KC_COMM, KC_DOT,  CTL_T(KC_SLSH), SFT_T(KC_RPRN),
-    KC_LPRN, KC_RPRN, KC_LBRC, KC_RBRC, KC_RCTL,
-    KC_PGUP, KC_LEAD,
+    KC_FN0,         KC_7,    KC_8,    KC_9,    KC_0,    KC_EQL,  KC_BSLS,
+    KC_UP,          KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_MINS,
+    KC_H,           KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+    MEH_T(KC_NO),   KC_N,    KC_M,    KC_COMM, KC_DOT,  CTL_T(KC_SLSH), SFT_T(KC_0),
+    KC_LPRN,        KC_RPRN, KC_LBRC, KC_RBRC, KC_RCTL,
+    KC_PGUP,        KC_LEAD,
     KC_PGDN,
-    TT(NAV), ALT_T(KC_ENT), GUI_T(KC_SPC)
+    TT(NAV),        ALT_T(KC_ENT), GUI_T(KC_SPC)
 
     /*KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5, KC_UP,              */
     /*KC_BSLS, KC_Q, KC_W, KC_F, KC_P, KC_G, KC_TRNS,           */
@@ -182,7 +182,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     RESET,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,  KC_F12,
     KC_PGUP, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, KC_MUTE, KC_MPLY,
     KC_TRNS, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, KC_TRNS,
-    KC_PGDN, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,   KC_UP, KC_TRNS,
+    KC_PGDN, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_UP, KC_TRNS,
     KC_BTN1, KC_BTN2, KC_LEFT, KC_DOWN, KC_RGHT,
     KC_PSCR, KC_TRNS,
     KC_TRNS,
@@ -234,24 +234,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Otherwise, it needs KC_*
 [EZ] = KEYMAP(  // layer 0 : default
     // left hand
-    KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5, KC_UP,
-    KC_BSLS, KC_Q, KC_W, KC_F, KC_P, KC_G, KC_TRNS,
+    KC_GRV,        KC_1, KC_2, KC_3, KC_4, KC_5, KC_UP,
+    KC_BSLS,       KC_Q, KC_W, KC_F, KC_P, KC_G, KC_TRNS,
     CTL_T(KC_ESC), KC_A, KC_R, KC_S, KC_T, KC_D,
-    KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, ALL_T(KC_NO),
-    KC_FN1, KC_LGUI, KC_LEFT,KC_RGHT,KC_TRNS,
-    KC_HOME,KC_INS,
+    KC_LSFT,       KC_Z, KC_X, KC_C, KC_V, KC_B, ALL_T(KC_NO),
+    KC_FN1,        KC_LGUI, KC_LEFT, KC_RGHT, KC_TRNS,
+    KC_HOME,       KC_INS,
     KC_DEL,
-    KC_SPC,KC_BSPC,KC_LALT,
+    KC_SPC,        KC_BSPC, KC_LALT,
     // right hand
-    KC_DOWN, KC_6, KC_7, KC_8, KC_9, KC_0, KC_EQL,
-    KC_TRNS, KC_J, KC_L, KC_U, KC_Y, KC_SCLN, KC_MINS,
-    KC_H, KC_N, KC_E, KC_I, KC_O, KC_QUOT,
-    MEH_T(KC_NO),KC_K, KC_M, KC_COMM,KC_DOT, KC_SLSH, KC_RSFT,
-    KC_LPRN,KC_RPRN,KC_LBRC,KC_RBRC, KC_FN1,
-    KC_PGUP, KC_END,
+    KC_DOWN,       KC_6, KC_7, KC_8, KC_9, KC_0, KC_EQL,
+    KC_TRNS,       KC_J, KC_L, KC_U, KC_Y, KC_SCLN, KC_MINS,
+    KC_H,          KC_N, KC_E, KC_I, KC_O, KC_QUOT,
+    MEH_T(KC_NO),  KC_K, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
+    KC_LPRN,       KC_RPRN, KC_LBRC, KC_RBRC, KC_FN1,
+    KC_PGUP,       KC_END,
     KC_PGDN,
-    KC_RALT,KC_TAB, KC_ENT
-    ),
+    KC_RALT,       KC_TAB, KC_ENT
+),
 
 };
 
