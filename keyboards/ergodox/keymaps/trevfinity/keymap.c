@@ -1,10 +1,10 @@
-#include "ergodox.h"
-#include "debug.h"
 #include "action_layer.h"
+#include "debug.h"
+#include "ergodox.h"
 #include "version.h"
 
-#include "led.h"
 #include "action_util.h"
+#include "led.h"
 
 #include <keymap_workman.h>
 
@@ -13,13 +13,14 @@
 /*#endif                               */
 
 enum custom_keycodes {
-  PLACEHOLDER = SAFE_RANGE, // can always be here
-  EPRM,
-  VRSN,
-  RGB_SLD
+    PLACEHOLDER = SAFE_RANGE, // can always be here
+    EPRM,
+    VRSN,
+    RGB_SLD
 };
 
-enum keymap_consts {    BASE = 0,
+enum keymap_consts {
+    BASE = 0,
     WM,
     // function mouse and media keys
     FNMM,
@@ -60,12 +61,12 @@ enum {
 /*[>TD(TD_ESC_CAPS)<]                                                       */
 
 const uint16_t PROGMEM fn_actions[] = {
-    [1] = ACTION_LAYER_TAP_KEY(FNMM, KC_GRV),          // FN0 - Momentary Layer 1 or tap for grave/tilde
-    [2] = ACTION_LAYER_TAP_TOGGLE(FNMM),               // FN1 - Momentary Layer 1 or tap to toggle
-    [3] = ACTION_BACKLIGHT_INCREASE(),                 // FN3
-    [4] = ACTION_BACKLIGHT_DECREASE(),                 // FN4
+	[1] = ACTION_LAYER_TAP_KEY(FNMM, KC_GRV), // FN0 - Momentary Layer 1 or tap for grave/tilde
+	[2] = ACTION_LAYER_TAP_TOGGLE(FNMM),      // FN1 - Momentary Layer 1 or tap to toggle
+	[3] = ACTION_BACKLIGHT_INCREASE(),	// FN3
+	[4] = ACTION_BACKLIGHT_DECREASE(),	// FN4
 
-    [5] = ACTION_LAYER_TAP_TOGGLE(SYMB),                // FN1 - Momentary Layer 1 (Symbols)
+	[5] = ACTION_LAYER_TAP_TOGGLE(SYMB), // FN1 - Momentary Layer 1 (Symbols)
 
     /*ACTION_MODS_TAP_KEY(MOD_LSFT, KC_LBRC),*/
     /*ACTION_MODS_TAP_KEY(MOD_RSFT, KC_RBRC),*/
@@ -396,56 +397,52 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*    return MACRO_NONE;                                                       */
 /*};                                                                           */
 
-const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
-{
-  // MACRODOWN only works in this function
-      switch(id) {
-        case 0:
-        if (record->event.pressed) {
-          SEND_STRING (QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION);
-        }
-        break;
-        case 1:
-        if (record->event.pressed) { // For resetting EEPROM
-          eeconfig_init();
-        }
-        break;
-      }
+const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
+    // MACRODOWN only works in this function
+    switch (id) {
+    case 0:
+	if (record->event.pressed) {
+	    SEND_STRING(QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION);
+	}
+	break;
+    case 1:
+	if (record->event.pressed) { // For resetting EEPROM
+	    eeconfig_init();
+	}
+	break;
+    }
     return MACRO_NONE;
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  switch (keycode) {
+    switch (keycode) {
     // dynamically generate these.
     case EPRM:
-      if (record->event.pressed) {
-        eeconfig_init();
-      }
-      return false;
-      break;
+	if (record->event.pressed) {
+	    eeconfig_init();
+	}
+	return false;
+	break;
     case VRSN:
-      if (record->event.pressed) {
-        SEND_STRING (QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION);
-      }
-      return false;
-      break;
+	if (record->event.pressed) {
+	    SEND_STRING(QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION);
+	}
+	return false;
+	break;
     case RGB_SLD:
-      if (record->event.pressed) {
-        #ifdef RGBLIGHT_ENABLE
-          rgblight_mode(1);
-        #endif
-      }
-      return false;
-      break;
-  }
-  return true;
+	if (record->event.pressed) {
+#ifdef RGBLIGHT_ENABLE
+	    rgblight_mode(1);
+#endif
+	}
+	return false;
+	break;
+    }
+    return true;
 }
 
-
 // Runs just one time when the keyboard initializes.
-void matrix_init_user(void) {
-    lcd_backlight_hal_init();
-};
+void matrix_init_user(void) { lcd_backlight_hal_init(); };
 
 LEADER_EXTERNS();
 
@@ -456,118 +453,117 @@ void matrix_scan_user(void) {
 
     switch (layer) {
     case BASE:
-        ergodox_board_led_off();
-        ergodox_right_led_1_off();
-        ergodox_right_led_2_off();
-        ergodox_right_led_3_off();
-        #ifdef SUBPROJECT_infinity
-        lcd_backlight_hal_color(5000, 5000, 5000);
-        #endif
-        break;
+	ergodox_board_led_off();
+	ergodox_right_led_1_off();
+	ergodox_right_led_2_off();
+	ergodox_right_led_3_off();
+#ifdef SUBPROJECT_infinity
+	lcd_backlight_hal_color(5000, 5000, 5000);
+#endif
+	break;
 
     case FNMM:
-        ergodox_right_led_3_on(); // blue
+	ergodox_right_led_3_on(); // blue
 
-        ergodox_board_led_off();
-        ergodox_right_led_2_off();
-        ergodox_right_led_3_off();
-        #ifdef SUBPROJECT_infinity
-        lcd_backlight_hal_color(2500, 1000, 5000);
-        #endif
-        break;
+	ergodox_board_led_off();
+	ergodox_right_led_2_off();
+	ergodox_right_led_3_off();
+#ifdef SUBPROJECT_infinity
+	lcd_backlight_hal_color(2500, 1000, 5000);
+#endif
+	break;
 
     case NAV:
-        ergodox_right_led_2_on(); // green
+	ergodox_right_led_2_on(); // green
 
-        ergodox_board_led_off();
-        ergodox_right_led_1_off();
-        ergodox_right_led_3_off();
-        #ifdef SUBPROJECT_infinity
-        lcd_backlight_hal_color(0, 5000, 1000);
-        #endif
-        break;
+	ergodox_board_led_off();
+	ergodox_right_led_1_off();
+	ergodox_right_led_3_off();
+#ifdef SUBPROJECT_infinity
+	lcd_backlight_hal_color(0, 5000, 1000);
+#endif
+	break;
 
     case EZ:
-        ergodox_right_led_1_on(); // red
+	ergodox_right_led_1_on(); // red
 
-        ergodox_board_led_off();
-        ergodox_right_led_2_off();
-        ergodox_right_led_3_off();
-        #ifdef SUBPROJECT_infinity
-        lcd_backlight_hal_color(5000, 2500, 2500);
-        #endif
-        break;
+	ergodox_board_led_off();
+	ergodox_right_led_2_off();
+	ergodox_right_led_3_off();
+#ifdef SUBPROJECT_infinity
+	lcd_backlight_hal_color(5000, 2500, 2500);
+#endif
+	break;
 
     case WM:
-        ergodox_board_led_off();
-        ergodox_right_led_1_off();
-        ergodox_right_led_2_off();
-        ergodox_right_led_3_off();
-        #ifdef SUBPROJECT_infinity
-        lcd_backlight_hal_color(5000, 2500, 2500);
-        #endif
-        break;
+	ergodox_board_led_off();
+	ergodox_right_led_1_off();
+	ergodox_right_led_2_off();
+	ergodox_right_led_3_off();
+#ifdef SUBPROJECT_infinity
+	lcd_backlight_hal_color(5000, 2500, 2500);
+#endif
+	break;
 
     case SYMB:
-      ergodox_right_led_1_on();
+	ergodox_right_led_1_on();
 
-      ergodox_board_led_off();
-      ergodox_right_led_2_off();
-      ergodox_right_led_3_off();
+	ergodox_board_led_off();
+	ergodox_right_led_2_off();
+	ergodox_right_led_3_off();
 
-      #ifdef SUBPROJECT_infinity
-      lcd_backlight_hal_color(5000, 0, 0);
-      #endif
-      break;
+#ifdef SUBPROJECT_infinity
+	lcd_backlight_hal_color(5000, 0, 0);
+#endif
+	break;
 
     case DEFAULT:
-      ergodox_right_led_2_on();
+	ergodox_right_led_2_on();
 
-      ergodox_board_led_off();
-      ergodox_right_led_1_off();
-      ergodox_right_led_3_off();
+	ergodox_board_led_off();
+	ergodox_right_led_1_off();
+	ergodox_right_led_3_off();
 
-      #ifdef SUBPROJECT_infinity
-      /*lcd_backlight_hal_color(0, 5000, 0);*/
-      lcd_backlight_hal_color(0, 0, 0);
-      #endif
-      break;
+#ifdef SUBPROJECT_infinity
+	/*lcd_backlight_hal_color(0, 5000, 0);*/
+	lcd_backlight_hal_color(0, 0, 0);
+#endif
+	break;
 
     default:
-      // none
-      ergodox_board_led_on();
+	// none
+	ergodox_board_led_on();
 
-      ergodox_right_led_1_off();
-      ergodox_right_led_2_off();
-      ergodox_right_led_3_off();
-      #ifdef SUBPROJECT_infinity
-      lcd_backlight_hal_color(0, 5000, 0);
-      #endif
-      break;
+	ergodox_right_led_1_off();
+	ergodox_right_led_2_off();
+	ergodox_right_led_3_off();
+#ifdef SUBPROJECT_infinity
+	lcd_backlight_hal_color(0, 5000, 0);
+#endif
+	break;
     }
 
     // Leader is KC_LEAD
     LEADER_DICTIONARY() {
-        leading = false;
-        leader_end();
+	leading = false;
+	leader_end();
 
-        SEQ_ONE_KEY(KC_F) {
-            register_code(KC_S);
-            unregister_code(KC_S);
-        }
-        SEQ_TWO_KEYS(KC_A, KC_S) {
-            register_code(KC_H);
-            unregister_code(KC_H);
-        }
-        SEQ_THREE_KEYS(KC_A, KC_S, KC_D) {
-            register_code(KC_LGUI);
-            register_code(KC_S);
-            unregister_code(KC_S);
-            unregister_code(KC_LGUI);
-        }
+	SEQ_ONE_KEY(KC_F) {
+	    register_code(KC_S);
+	    unregister_code(KC_S);
+	}
+	SEQ_TWO_KEYS(KC_A, KC_S) {
+	    register_code(KC_H);
+	    unregister_code(KC_H);
+	}
+	SEQ_THREE_KEYS(KC_A, KC_S, KC_D) {
+	    register_code(KC_LGUI);
+	    register_code(KC_S);
+	    unregister_code(KC_S);
+	    unregister_code(KC_LGUI);
+	}
     }
 };
-
 
 /*// Runs constantly in the background, in a loop.    */
 /*void matrix_scan_user(void) {                       */
