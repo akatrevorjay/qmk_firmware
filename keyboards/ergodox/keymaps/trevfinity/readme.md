@@ -1,16 +1,15 @@
-# ecloud QWERTY, a familiar and powerful layout #
+# ErgoDox EZ Default Configuration
 
-Like Ordinary, this layout maintains many key positions from common QWERTY keyboards.
+## Changelog
 
-However, it has some common programming-related keys along the bottom row, and
-a dedicated Compose key.  The vertical keys near the center are arrow keys.
-The top-left keys on both halves are combo accent-grave and function-toggle keys,
-because they are near the numbers, so it's convenient to hold one of them to
-get a function key quickly.  There's also a function-toggle key at the
-lower left corner.  The Control key is in the Sun position (what would be
-caps lock for the muggles), and if tapped, acts as an esc key; but there's
-also a dedicated esc key, and a dedicated right-control key.
+* Dec 2016:
+  * Added LED keys
+  * Refreshed layout graphic, comes from http://configure.ergodox-ez.com now.
+* Sep 22, 2016:
+  * Created a new key in layer 1 (bottom-corner key) that resets the EEPROM.
+* Feb 2, 2016 (V1.1): 
+  * Made the right-hand quote key double as Cmd/Win on hold. So you get ' when you tap it, " when you tap it with Shift, and Cmd or Win when you hold it. You can then use it as a modifier, or just press and hold it for a moment (and then let go) to send a single Cmd or Win keystroke (handy for opening the Start menu on Windows).
 
-ergodox@ecloud.org
-no rights reserved, use for any purpose, credit me if you are a nice person
+This is what we ship with out of the factory. :) The image says it all:
 
+![Default](default_firmware_v1.2-2.png)
