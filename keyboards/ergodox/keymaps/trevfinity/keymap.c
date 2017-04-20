@@ -8,9 +8,9 @@
 
 #include <keymap_workman.h>
 
-/*#ifdef SUBPROJECT_infinity           */
-/*#include "visualizer/lcd_backlight.h"*/
-/*#endif                               */
+#ifdef SUBPROJECT_infinity
+#include "visualizer/lcd_backlight.h"
+#endif
 
 enum custom_keycodes {
     PLACEHOLDER = SAFE_RANGE, // can always be here
@@ -28,6 +28,8 @@ enum keymap_consts {
     NAV,
     // Symbols
     SYMB,
+    // Media
+    MDIA,
     // ErgoDox EZ
     EZ,
     // Default
