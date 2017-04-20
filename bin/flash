@@ -1,0 +1,28 @@
+#!/bin/zsh
+set -eo pipefail
+set -xv
+
+export SERIAL=mk20dx256vlh7
+
+[ $# -gt 0 ] || set -- left right
+
+make=(make -j1)
+
+kbd=(ergodox infinity trevfinity)
+
+target="${(j:-:)kbd}"
+
+flash() {
+	local master="${1:-left}"
+
+	bear $make ${target} MASTER=${master}
+
+	echo "connect ${master:-left} half and press enter"
+	read
+
+	$make ${target}-dfu-util MASTER=${master}
+}
+
+for i in "$@"; do
+	flash $i
+done
