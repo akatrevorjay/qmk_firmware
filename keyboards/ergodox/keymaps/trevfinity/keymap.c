@@ -63,12 +63,12 @@ enum {
 /*[>TD(TD_ESC_CAPS)<]                                                       */
 
 const uint16_t PROGMEM fn_actions[] = {
-	[1] = ACTION_LAYER_TAP_KEY(FNMM, KC_GRV), // FN0 - Momentary Layer 1 or tap for grave/tilde
-	[2] = ACTION_LAYER_TAP_TOGGLE(FNMM),      // FN1 - Momentary Layer 1 or tap to toggle
-	[3] = ACTION_BACKLIGHT_INCREASE(),	// FN3
-	[4] = ACTION_BACKLIGHT_DECREASE(),	// FN4
+	[0] = ACTION_LAYER_TAP_KEY(FNMM, KC_GRV), // FN0 - Momentary Layer 1 or tap for grave/tilde
+	[1] = ACTION_LAYER_TAP_TOGGLE(FNMM),      // FN1 - Momentary Layer 1 or tap to toggle
+	[2] = ACTION_BACKLIGHT_INCREASE(),	// FN3
+	[3] = ACTION_BACKLIGHT_DECREASE(),	// FN4
 
-	[5] = ACTION_LAYER_TAP_TOGGLE(SYMB), // FN1 - Momentary Layer 1 (Symbols)
+	[4] = ACTION_LAYER_TAP_TOGGLE(SYMB), // FN1 - Momentary Layer 1 (Symbols)
 
     /*ACTION_MODS_TAP_KEY(MOD_LSFT, KC_LBRC),*/
     /*ACTION_MODS_TAP_KEY(MOD_RSFT, KC_RBRC),*/
@@ -110,19 +110,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     CTL_T(KC_TAB),  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_DOWN,
     GUI_T(KC_ESC),  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,
     KC_LSFT,    CTL_T(KC_Z),    KC_X,    KC_C,    KC_V,    KC_B,    ALL_T(KC_NO),
-    TT(FNMM),       KC_LGUI, KC_LGUI, KC_LALT, KC_LCTL,
+    MO(FNMM),       KC_LGUI, KC_LGUI, KC_LALT, KC_LCTL,
     KC_HOME,        KC_END,
-    TT(EZ),
+    MO(EZ),
     GUI_T(KC_BSPC), ALT_T(KC_DEL),  CTL_T(KC_ESC),
     // right hand
     KC_FN0,         KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_BSLS,
     KC_EQL,          KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  KC_MINS,
     KC_H,           KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
     MEH_T(KC_NO),   KC_N,    KC_M,    KC_COMM, KC_DOT,  CTL_T(KC_SLSH), KC_RSFT,
-    KC_LPRN,        KC_RPRN, KC_LBRC, KC_RBRC, KC_RCTL,
+    MO(NAV),        MO(SYMB), KC_LBRC, KC_RBRC, KC_RCTL,
     KC_PGUP,        KC_LEAD,
     KC_PGDN,
-    TT(NAV),        ALT_T(KC_ENT), GUI_T(KC_SPC)
+    MO(NAV),        ALT_T(KC_ENT), GUI_T(KC_SPC)
 ),
 
 [WM] = KEYMAP(  // layer 0 : default
