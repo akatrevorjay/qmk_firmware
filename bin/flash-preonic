@@ -1,0 +1,22 @@
+#!/bin/zsh
+set -eo pipefail
+set -xv
+
+export SERIAL=mk20dx256vlh7
+
+make=(make -j1)
+
+kbd=(preonic trevonic)
+
+target="${(j:-:)kbd}"
+
+flash() {
+	bear $make ${target}
+
+	echo "connect preonic and press enter"
+	read
+
+	$make ${target}-dfu-util
+}
+
+flash
