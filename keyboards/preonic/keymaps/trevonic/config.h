@@ -21,9 +21,17 @@
    - Virtual sustain, portamento, and modulation wheel
    - etc.
 */
-//#define MIDI_ADVANCED
+#define MIDI_ADVANCED
 
 /* override number of MIDI tone keycodes (each octave adds 12 keycodes and allocates 12 bytes) */
 //#define MIDI_TONE_KEYCODE_OCTAVES 2
+
+/* ws2812 RGB LED */
+//#define RGB_DI_PIN D1
+//#define RGBLIGHT_ANIMATIONS
+//#define RGBLED_NUM 28     // Number of LEDs
+//#define RGBLIGHT_HUE_STEP 10
+//#define RGBLIGHT_SAT_STEP 17
+//#define RGBLIGHT_VAL_STEP 17
 
 #endif
