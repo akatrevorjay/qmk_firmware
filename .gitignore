@@ -35,4 +35,10 @@ util/Win_Check_Output.txt
 .vscode
 .stfolder
 
+# trevorj
 /compile_commands.json
+
+# ignore image files
+*.png
+*.jpg
+*.gif
