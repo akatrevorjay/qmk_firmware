@@ -62,7 +62,7 @@ BACKLIGHT_ENABLE ?= yes      # Enable keyboard backlight functionality
 MIDI_ENABLE ?= yes            # MIDI controls
 AUDIO_ENABLE ?= yes           # Audio output on port C6
 UNICODE_ENABLE ?= no         # Unicode
-BLUETOOTH_ENABLE ?= no       # Enable Bluetooth with the Adafruit EZ-Key HID
+BLUETOOTH_ENABLE ?= yes       # Enable Bluetooth with the Adafruit EZ-Key HID
 RGBLIGHT_ENABLE ?= yes        # Enable WS2812 RGB underlight.
 API_SYSEX_ENABLE ?= no
 
