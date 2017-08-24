@@ -85,6 +85,6 @@
 #define RGBLIGHT_VAL_STEP 12 // units to step when in/decreasing value (brightness)
 
 /* #define RGB_MIDI */
-#define RGBW_BB_TWI // bit-bangs twi to EZ RGBW LEDs (only required for Ergodox EZ)
+/* #define RGBW_BB_TWI // bit-bangs twi to EZ RGBW LEDs (only required for Ergodox EZ) */
 
 #endif
