@@ -1,7 +1,7 @@
 CONSOLE_ENABLE = no    # for debugging
 SLEEP_LED_ENABLE = no  # no led blinking while sleeping
 
-TAP_DANCE_ENABLE = yes
+# TAP_DANCE_ENABLE = yes
 NKRO_ENABLE = yes
 KEY_LOCK_ENABLE = yes
 # MIDI_ENABLE = yes

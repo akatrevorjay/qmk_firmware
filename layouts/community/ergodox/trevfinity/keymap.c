@@ -3,9 +3,9 @@
 /* #include "ergodox.h" */
 #include "debug.h"
 #include "action_layer.h"
-#include "version.h"
 #include "action_util.h"
 #include "led.h"
+#include "version.h"
 
 #include <keymap_workman.h>
 
