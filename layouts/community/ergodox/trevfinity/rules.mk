@@ -1,0 +1,4 @@
+# TAP_DANCE_ENABLE = yes
+# LED_ENABLE = yes
+# RGBLIGHT_ENABLE = yes
+# MIDI_ENABLE = yes

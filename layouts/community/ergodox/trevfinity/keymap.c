@@ -1,16 +1,15 @@
-#include "action_layer.h"
+/* #include <keymap_extras/keymap_colemak.h> */
+#include QMK_KEYBOARD_H
+/* #include "ergodox.h" */
 #include "debug.h"
-#include "ergodox.h"
+#include "action_layer.h"
 #include "version.h"
-
 #include "action_util.h"
 #include "led.h"
 
 #include <keymap_workman.h>
 
-#ifdef SUBPROJECT_infinity
 #include "visualizer/lcd_backlight.h"
-#endif
 
 enum custom_keycodes {
     PLACEHOLDER = SAFE_RANGE, // can always be here
@@ -444,7 +443,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 // Runs just one time when the keyboard initializes.
-void matrix_init_user(void) { lcd_backlight_hal_init(); };
+/* void matrix_init_user(void) { lcd_backlight_hal_init(); }; */
 
 LEADER_EXTERNS();
 
@@ -459,9 +458,8 @@ void matrix_scan_user(void) {
 	ergodox_right_led_1_off();
 	ergodox_right_led_2_off();
 	ergodox_right_led_3_off();
-#ifdef SUBPROJECT_infinity
+
 	lcd_backlight_hal_color(5000, 5000, 5000);
-#endif
 	break;
 
     case FNMM:
@@ -470,9 +468,8 @@ void matrix_scan_user(void) {
 	ergodox_board_led_off();
 	ergodox_right_led_2_off();
 	ergodox_right_led_3_off();
-#ifdef SUBPROJECT_infinity
+
 	lcd_backlight_hal_color(2500, 1000, 5000);
-#endif
 	break;
 
     case NAV:
@@ -481,9 +478,8 @@ void matrix_scan_user(void) {
 	ergodox_board_led_off();
 	ergodox_right_led_1_off();
 	ergodox_right_led_3_off();
-#ifdef SUBPROJECT_infinity
+
 	lcd_backlight_hal_color(0, 5000, 1000);
-#endif
 	break;
 
     case EZ:
@@ -492,9 +488,8 @@ void matrix_scan_user(void) {
 	ergodox_board_led_off();
 	ergodox_right_led_2_off();
 	ergodox_right_led_3_off();
-#ifdef SUBPROJECT_infinity
+
 	lcd_backlight_hal_color(5000, 2500, 2500);
-#endif
 	break;
 
     case WM:
@@ -502,9 +497,8 @@ void matrix_scan_user(void) {
 	ergodox_right_led_1_off();
 	ergodox_right_led_2_off();
 	ergodox_right_led_3_off();
-#ifdef SUBPROJECT_infinity
+
 	lcd_backlight_hal_color(5000, 2500, 2500);
-#endif
 	break;
 
     case SYMB:
@@ -514,9 +508,7 @@ void matrix_scan_user(void) {
 	ergodox_right_led_2_off();
 	ergodox_right_led_3_off();
 
-#ifdef SUBPROJECT_infinity
 	lcd_backlight_hal_color(5000, 0, 0);
-#endif
 	break;
 
     case DEFAULT:
@@ -526,10 +518,8 @@ void matrix_scan_user(void) {
 	ergodox_right_led_1_off();
 	ergodox_right_led_3_off();
 
-#ifdef SUBPROJECT_infinity
 	/*lcd_backlight_hal_color(0, 5000, 0);*/
 	lcd_backlight_hal_color(0, 0, 0);
-#endif
 	break;
 
     default:
@@ -539,9 +529,8 @@ void matrix_scan_user(void) {
 	ergodox_right_led_1_off();
 	ergodox_right_led_2_off();
 	ergodox_right_led_3_off();
-#ifdef SUBPROJECT_infinity
+
 	lcd_backlight_hal_color(0, 5000, 0);
-#endif
 	break;
     }
 

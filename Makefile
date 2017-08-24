@@ -42,7 +42,6 @@ STARTING_DIR := $(subst $(ABS_ROOT_DIR),,$(ABS_STARTING_DIR))
 BUILD_DIR := $(ROOT_DIR)/.build
 TEST_DIR := $(BUILD_DIR)/test
 ERROR_FILE := $(BUILD_DIR)/error_occurred
-TAP_DANCE_ENABLE := yes
 
 MAKEFILE_INCLUDED=yes
 

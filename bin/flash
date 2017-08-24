@@ -8,7 +8,7 @@ export SERIAL=mk20dx256vlh7
 
 make=(make -j1)
 
-kbd=(ergodox infinity trevfinity)
+kbd=(ergodox_infinity trevfinity)
 
 target="${(j:-:)kbd}"
 
