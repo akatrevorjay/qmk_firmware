@@ -16,7 +16,7 @@ flash() {
 	echo "connect preonic and press enter"
 	read
 
-	$make ${target}-dfu-util
+	$make ${target}-dfu
 }
 
 flash
