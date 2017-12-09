@@ -80,6 +80,20 @@ const uint8_t RGBLED_KNIGHT_INTERVALS[] PROGMEM = {127, 63, 31};
 const uint16_t RGBLED_GRADIENT_RANGES[] PROGMEM = {360, 240, 180, 120, 90};
 ```
 
+### LED control
+
+Look in `rgblights.h` for all available functions, but if you want to control all or some LEDs your goto functions are:
+
+```c
+rgblight_disable();  // turn all lights off
+rgblight_enable();  // turn lights on, based on their previous state (stored in EEPROM)
+
+rgblight_setrgb(r, g, b);  // where r/g/b is a number from 0..255.  Turns all the LEDs to this color
+rgblight_sethsv(h, s, v);  // HSV color control
+rgblight_setrgb_at(r,g,b, LED);  // control a single LED.  0 <= LED < RGBLED_NUM
+rgblight_sethsv_at(h,s,v, LED);  // control a single LED.  0 <= LED < RGBLED_NUM
+```
+
 ## RGB Lighting Keycodes
 
 These control the RGB Lighting functionality.
@@ -87,8 +101,8 @@ These control the RGB Lighting functionality.
 | Long Name | Short Name | Description |
 |-----------|------------|-------------|
 ||`RGB_TOG`|toggle on/off|
-||`RGB_MOD`|cycle through modes|
-||`RGB_SMOD`|cycle through modes, use reverse direction when shift is hold|
+|`RGB_MODE_FORWARD`|`RGB_MOD`|cycle through modes, use reverse direction when shift is held|
+|`RGB_MODE_REVERSE`|`RGB_RMOD`|cycle through modes in reverse (also suppost shift to go forward)|
 ||`RGB_HUI`|hue increase|
 ||`RGB_HUD`|hue decrease|
 ||`RGB_SAI`|saturation increase|
@@ -103,6 +117,8 @@ These control the RGB Lighting functionality.
 |`RGB_MODE_KNIGHT`|`RGB_M_K`| Switch to the knight animation |
 |`RGB_MODE_XMAS`|`RGB_M_X`| Switch to the Christmas animation |
 |`RGB_MODE_GRADIENT`|`RGB_M_G`| Switch to the static gradient mode |
+
+note: for backwards compatibility, `RGB_SMOD` is an alias for `RGB_MOD`.
 
 ## Hardware Modification
 
