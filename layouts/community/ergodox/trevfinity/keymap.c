@@ -1,4 +1,3 @@
-/* #include <keymap_extras/keymap_colemak.h> */
 #include QMK_KEYBOARD_H
 /* #include "ergodox.h" */
 #include "debug.h"
@@ -7,6 +6,7 @@
 #include "led.h"
 #include "version.h"
 
+/* #include <keymap_extras/keymap_colemak.h> */
 #include <keymap_workman.h>
 
 #include "visualizer/lcd_backlight.h"
@@ -20,7 +20,7 @@ enum custom_keycodes {
 
 enum keymap_consts {
     BASE = 0,
-    WM,
+    WK,
     // function mouse and media keys
     FNMM,
     // Navigation
@@ -103,7 +103,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
 // Otherwise, it needs KC_*
-[BASE] = KEYMAP(  // layer 0 : default
+[BASE] = LAYOUT_ergodox(  // layer 0 : default
     // left hand
     KC_FN0,         KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,
     CTL_T(KC_TAB),  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_DOWN,
@@ -124,20 +124,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     MO(NAV),        ALT_T(KC_ENT), GUI_T(KC_SPC)
 ),
 
-[WM] = KEYMAP(  // layer 0 : default
+[WK] = LAYOUT_ergodox(  // layer 0 : default
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TRNS,    WM_Q,    WM_W,    WM_E,    WM_R,    WM_T, KC_TRNS,
-    KC_TRNS,    WM_A,    WM_S,    WM_D,    WM_F,    WM_G,
-    KC_TRNS,    WM_Z,    WM_X,    WM_C,    WM_V,    WM_B, KC_TRNS,
+    KC_TRNS,    WK_Q,    WK_W,    WK_E,    WK_R,    WK_T, KC_TRNS,
+    KC_TRNS,    WK_A,    WK_S,    WK_D,    WK_F,    WK_G,
+    KC_TRNS,    WK_Z,    WK_X,    WK_C,    WK_V,    WK_B, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS,
     KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS,
     // right hand
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TRNS,    WM_Y,    WM_U,    WM_I,    WM_O, KC_P, KC_TRNS,
-       WM_H,    WM_J,    WM_K,    WM_K,    WM_SCLN, WM_QUOT,
-    KC_TRNS,    WM_N,    WM_M, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS,    WK_Y,    WK_U,    WK_I,    WK_O, KC_P, KC_TRNS,
+       WK_H,    WK_J,    WK_K,    WK_K,    WK_SCLN, KC_QUOT,
+    KC_TRNS,    WK_N,    WK_M, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_COMM, KC_DOT, KC_SLSH,
     KC_TRNS, KC_TRNS,
     KC_TRNS,
@@ -167,7 +167,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 // FUNCTION MEDIA AND MOUSE
-[FNMM] = KEYMAP(
+[FNMM] = LAYOUT_ergodox(
     RESET,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_MS_U, KC_TRNS, KC_TRNS, KC_HOME,
     KC_TRNS, KC_TRNS, KC_MS_L, KC_MS_D, KC_MS_R, KC_TRNS,
@@ -187,7 +187,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, KC_TRNS, KC_TRNS
 ),
 
-[NAV] = KEYMAP(
+[NAV] = LAYOUT_ergodox(
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
@@ -229,7 +229,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 `--------------------'       `--------------------'
  */
 // SYMBOLS
-[SYMB] = KEYMAP(
+[SYMB] = LAYOUT_ergodox(
        // left hand
        VRSN,   KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_TRNS,
        KC_TRNS,KC_EXLM,KC_AT,  KC_LCBR,KC_RCBR,KC_PIPE,KC_TRNS,
@@ -272,7 +272,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 `--------------------'       `--------------------'
  */
 // MEDIA AND MOUSE
-[MDIA] = KEYMAP(
+[MDIA] = LAYOUT_ergodox(
        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
        KC_TRNS, KC_TRNS, KC_TRNS, KC_MS_U, KC_TRNS, KC_TRNS, KC_TRNS,
        KC_TRNS, KC_TRNS, KC_MS_L, KC_MS_D, KC_MS_R, KC_TRNS,
@@ -315,7 +315,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
 // Otherwise, it needs KC_*
-[EZ] = KEYMAP(  // layer 0 : default
+[EZ] = LAYOUT_ergodox(  // layer 0 : default
     // left hand
     KC_GRV,        KC_1, KC_2, KC_3, KC_4, KC_5, KC_UP,
     KC_BSLS,       KC_Q, KC_W, KC_F, KC_P, KC_G, KC_TRNS,
@@ -359,7 +359,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
 // Otherwise, it needs KC_*
-[DEFAULT] = KEYMAP(  // layer 0 : default
+[DEFAULT] = LAYOUT_ergodox(  // layer 0 : default
         // left hand
         KC_EQL,         KC_1,         KC_2,   KC_3,   KC_4,   KC_5,   KC_LEFT,
         KC_DELT,        KC_Q,         KC_W,   KC_E,   KC_R,   KC_T,   TG(SYMB),
@@ -495,7 +495,7 @@ void matrix_scan_user(void) {
 	lcd_backlight_hal_color(5000, 2500, 2500);
 	break;
 
-    case WM:
+    case WK:
 	ergodox_board_led_off();
 	ergodox_right_led_1_off();
 	ergodox_right_led_2_off();

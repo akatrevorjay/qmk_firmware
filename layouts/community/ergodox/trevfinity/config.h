@@ -25,17 +25,17 @@
 /* #define DIODE_DIRECTION COL2ROW // COL2ROW or ROW2COL - how your matrix is configured */
 /* // COL2ROW means the black mark on your diode is facing to the rows, and between the switch and the rows */
 
-#define AUDIO_VOICES // turns on the alternate audio voices (to cycle through)
-#define C6_AUDIO // enables audio on pin C6
-#define B5_AUDIO // enables audio on pin B5 (duophony is enable if both are enabled)
+// #define AUDIO_VOICES // turns on the alternate audio voices (to cycle through)
+// #define C6_AUDIO // enables audio on pin C6
+// #define B5_AUDIO // enables audio on pin B5 (duophony is enable if both are enabled)
 
-/* #define BACKLIGHT_PIN B7 // pin of the backlight - B5, B6, B7 use PWM, others use softPWM */
-/* #define BACKLIGHT_LEVELS 3 // number of levels your backlight will have (not including off) */
+// #define BACKLIGHT_PIN B7 // pin of the backlight - B5, B6, B7 use PWM, others use softPWM
+// #define BACKLIGHT_LEVELS 3 // number of levels your backlight will have (not including off)
 
 /* #define DEBOUNCING_DELAY 5 // the delay when reading the value of the pin (5 is default) */
 
-/* #define LOCKING_SUPPORT_ENABLE // mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
-/* #define LOCKING_RESYNC_ENABLE // tries to keep switch state consistent with keyboard LED state */
+#define LOCKING_SUPPORT_ENABLE // mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap
+#define LOCKING_RESYNC_ENABLE // tries to keep switch state consistent with keyboard LED state
 
 /* #define IS_COMMAND() ( \ // key combination that allows the use of magic commands (useful for debugging) */
 /*     keyboard_report->mods == (MOD_BIT(KC_LSHIFT) | MOD_BIT(KC_RSHIFT)) \ */
@@ -58,8 +58,8 @@
 #define IGNORE_MOD_TAP_INTERRUPT // makes it possible to do rolling combos (zx) with keys that convert to other keys on hold
 
 // the following options can save on file size at the expense of that feature
-/* #define NO_DEBUG // disable debuging (saves on file size) */
-/* #define NO_PRINT // disable printing (saves of file size) */
+// #define NO_DEBUG // disable debuging (saves on file size)
+#define NO_PRINT // disable printing (saves of file size)
 /* #define NO_ACTION_LAYER // no layers */
 /* #define NO_ACTION_TAPPING // no tapping for layers/mods */
 /* #define NO_ACTION_ONESHOT // no oneshot for layers/mods */

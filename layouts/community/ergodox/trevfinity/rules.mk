@@ -1,5 +1,5 @@
-CONSOLE_ENABLE = no    # for debugging
-SLEEP_LED_ENABLE = no  # no led blinking while sleeping
+CONSOLE_ENABLE   = yes  # Console for debug(+400)
+SLEEP_LED_ENABLE = yes  # no led blinking while sleeping
 
 # TAP_DANCE_ENABLE = yes
 NKRO_ENABLE = yes
