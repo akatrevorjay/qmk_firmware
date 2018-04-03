@@ -56,14 +56,14 @@ static const SPIConfig spi1config = {
 static GFXINLINE void acquire_bus(GDisplay *g) {
     (void) g;
     // Only the LCD is using the SPI bus, so no need to acquire
-    // spiAcquireBus(&SPID1);
+    spiAcquireBus(&SPID1);
     spiSelect(&SPID1);
 }
 
 static GFXINLINE void release_bus(GDisplay *g) {
     (void) g;
     // Only the LCD is using the SPI bus, so no need to release
-    //spiReleaseBus(&SPID1);
+    spiReleaseBus(&SPID1);
     spiUnselect(&SPID1);
 }
 

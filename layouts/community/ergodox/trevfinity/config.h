@@ -34,8 +34,8 @@
 
 /* #define DEBOUNCING_DELAY 5 // the delay when reading the value of the pin (5 is default) */
 
-#define LOCKING_SUPPORT_ENABLE // mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap
-#define LOCKING_RESYNC_ENABLE // tries to keep switch state consistent with keyboard LED state
+// #define LOCKING_SUPPORT_ENABLE // mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap
+// #define LOCKING_RESYNC_ENABLE // tries to keep switch state consistent with keyboard LED state
 
 /* #define IS_COMMAND() ( \ // key combination that allows the use of magic commands (useful for debugging) */
 /*     keyboard_report->mods == (MOD_BIT(KC_LSHIFT) | MOD_BIT(KC_RSHIFT)) \ */
@@ -55,11 +55,11 @@
 /* #define ONESHOT_TIMEOUT 300 // how long before oneshot times out */
 /* #define ONESHOT_TAP_TOGGLE 2 // how many taps before oneshot toggle is triggered */
 
-#define IGNORE_MOD_TAP_INTERRUPT // makes it possible to do rolling combos (zx) with keys that convert to other keys on hold
+// #define IGNORE_MOD_TAP_INTERRUPT // makes it possible to do rolling combos (zx) with keys that convert to other keys on hold
 
 // the following options can save on file size at the expense of that feature
 // #define NO_DEBUG // disable debuging (saves on file size)
-#define NO_PRINT // disable printing (saves of file size)
+// #define NO_PRINT // disable printing (saves of file size)
 /* #define NO_ACTION_LAYER // no layers */
 /* #define NO_ACTION_TAPPING // no tapping for layers/mods */
 /* #define NO_ACTION_ONESHOT // no oneshot for layers/mods */
@@ -71,18 +71,19 @@
 /* #define MOUSEKEY_TIME_TO_MAX    60 */
 /* #define MOUSEKEY_MAX_SPEED      7 */
 /* #define MOUSEKEY_WHEEL_DELAY 0 */
-#undef MOUSEKEY_TIME_TO_MAX
-#undef MOUSEKEY_MAX_SPEED
-#define MOUSEKEY_TIME_TO_MAX    10
-#define MOUSEKEY_MAX_SPEED      10
 
-// ws2812 options
-#define RGB_DI_PIN D7 // pin the DI on the ws2812 is hooked-up to
-#define RGBLIGHT_ANIMATIONS // run RGB animations
-#define RGBLED_NUM 15 // number of LEDs
-#define RGBLIGHT_HUE_STEP 12 // units to step when in/decreasing hue
-#define RGBLIGHT_SAT_STEP 25 // units to step when in/decresing saturation
-#define RGBLIGHT_VAL_STEP 12 // units to step when in/decreasing value (brightness)
+// #undef MOUSEKEY_TIME_TO_MAX
+// #undef MOUSEKEY_MAX_SPEED
+// #define MOUSEKEY_TIME_TO_MAX    10
+// #define MOUSEKEY_MAX_SPEED      10
+
+// // ws2812 options
+// #define RGB_DI_PIN D7 // pin the DI on the ws2812 is hooked-up to
+// #define RGBLIGHT_ANIMATIONS // run RGB animations
+// #define RGBLED_NUM 15 // number of LEDs
+// #define RGBLIGHT_HUE_STEP 12 // units to step when in/decreasing hue
+// #define RGBLIGHT_SAT_STEP 25 // units to step when in/decresing saturation
+// #define RGBLIGHT_VAL_STEP 12 // units to step when in/decreasing value (brightness)
 
 /* #define RGB_MIDI */
 /* #define RGBW_BB_TWI // bit-bangs twi to EZ RGBW LEDs (only required for Ergodox EZ) */

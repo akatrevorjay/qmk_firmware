@@ -38,7 +38,7 @@ MCU_STARTUP = k20x7
 #   - PJRC_TEENSY_3 for Teensy 3.0
 #   - PJRC_TEENSY_3_1 for Teensy 3.1 or 3.2
 #   - MCHCK_K20 for Infinity KB
-#BOARD = MCHCK_K20
+# BOARD = MCHCK_K20
 BOARD = PJRC_TEENSY_3_1
 
 # Cortex version
@@ -58,10 +58,10 @@ OPT_DEFS += -DCORTEX_VTOR_INIT=0x00002000
 #   comment out to disable the options.
 #
 
-BOOTMAGIC_ENABLE = no  # Virtual DIP switch configuration(+1000)
+BOOTMAGIC_ENABLE = yes  # Virtual DIP switch configuration(+1000)
 MOUSEKEY_ENABLE  = yes # Mouse keys(+4700)
 EXTRAKEY_ENABLE  = yes # Audio control and System control(+450)
-CONSOLE_ENABLE   = no  # Console for debug(+400)
+CONSOLE_ENABLE   = yes  # Console for debug(+400)
 COMMAND_ENABLE   = yes # Commands for debug and configuration
 CUSTOM_MATRIX    = yes # Custom matrix file for the ErgoDox EZ
 SLEEP_LED_ENABLE = yes # Breathing sleep LED during USB suspend
@@ -87,3 +87,4 @@ LED_WIDTH = 7
 LED_HEIGHT = 7
 
 LAYOUTS = ergodox
+
