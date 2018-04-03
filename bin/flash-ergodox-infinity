@@ -8,9 +8,7 @@ export SERIAL=mk20dx256vlh7
 
 make=(make -j1)
 
-kbd=(ergodox infinity trevfinity)
-
-target="${(j:-:)kbd}"
+target="ergodox_infinity:trevfinity"
 
 flash() {
 	local master="${1:-left}"
@@ -20,7 +18,7 @@ flash() {
 	echo "connect ${master:-left} half and press enter"
 	read
 
-	$make ${target}-dfu-util MASTER=${master}
+	$make ${target}:dfu-util MASTER=${master}
 }
 
 for i in "$@"; do
