@@ -36,6 +36,7 @@
   * [Documentation Templates](documentation_templates.md)
   * [Glossary](reference_glossary.md)
   * [Unit Testing](unit_testing.md)
+  * [Useful Functions](ref_functions.md)
 
 * [Features](features.md)
   * [Basic Keycodes](keycodes_basic.md)
@@ -73,6 +74,7 @@
 * For Makers and Modders
   * [Hand Wiring Guide](hand_wire.md)
   * [ISP Flashing Guide](isp_flashing_guide.md)
+  * [ARM Debugging Guide](arm_debugging.md)
 
 * For a Deeper Understanding
   * [How Keyboards Work](how_keyboards_work.md)
