@@ -50,7 +50,7 @@
 
 #define PERMISSIVE_HOLD // makes tap and hold keys work better for fast typers who don't want tapping term set above 500
 
-/* #define LEADER_TIMEOUT 300 // how long before the leader key times out */
+#define LEADER_TIMEOUT 300 // how long before the leader key times out
 
 /* #define ONESHOT_TIMEOUT 300 // how long before oneshot times out */
 /* #define ONESHOT_TAP_TOGGLE 2 // how many taps before oneshot toggle is triggered */

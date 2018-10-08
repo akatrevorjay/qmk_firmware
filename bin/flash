@@ -1,28 +1,70 @@
 #!/bin/zsh
 set -eo pipefail
-set -xv
+# set -xv
 
-export SERIAL=mk20dx256vlh7
+self=${0:t}
+root=${0:h}/..
 
-[ $# -gt 0 ] || set -- left right
+make() {
+	local cmd=(
+		make -C $root
+	)
 
-make=(make -j1)
+	! (( ${+commands[bear]} )) || cmd=(bear $cmd)
 
-kbd=(ergodox_infinity trevfinity)
-
-target="${(j:-:)kbd}"
-
-flash() {
-	local master="${1:-left}"
-
-	bear $make ${target} MASTER=${master}
-
-	echo "connect ${master:-left} half and press enter"
-	read
-
-	$make ${target}-dfu-util MASTER=${master}
+	command $cmd -j$(nproc) "$@" || command $cmd -j1 "$@"
 }
 
-for i in "$@"; do
-	flash $i
-done
+flash() {
+	usage() {
+		echo "Usage: $0 KEYBOARD_NAME"
+	}
+
+	if [[ $# -eq 0 ]]; then
+		usage >&2
+		return 1
+	fi
+
+	local target=$1; shift
+	case $target in
+		*:*) ;;
+
+		ergodox_infinity)
+			if [[ $# -eq 0 ]]; then
+				local side
+				for side (right left); do
+					echo
+					echo "  >> connect $side keyboard and press enter to flash <<"
+					read
+
+					flash $target MASTER=$side "$@"
+				done
+
+				return
+			fi
+
+			export SERIAL=mk20dx256vlh7
+			target="ergodox_infinity:trevorj:dfu-util"
+			;;
+
+		planck) target="planck/light" ;&
+		*)
+			target=${target}:trevorj:dfu ;;
+	esac
+
+	set -xv
+	make $target "$@"
+	set +xv
+}
+
+main() {
+	case $self in
+		flash-*)	set -- ${self#flash-} "$@" ;;
+	esac
+
+	flash "$@"
+}
+
+main "$@"
+
+
