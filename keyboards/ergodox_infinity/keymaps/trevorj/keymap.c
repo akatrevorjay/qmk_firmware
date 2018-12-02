@@ -14,7 +14,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#ifndef CONFIG_USER_KEYMAP
+#define CONFIG_USER_KEYMAP
+
 #include QMK_KEYBOARD_H
+
 #include "quantum.h"
 /* #include "ergodox.h" */
 #include "action_layer.h"
@@ -678,3 +682,6 @@ SEQ_THREE_KEYS(KC_A, KC_S, KC_D) {
 /*             break; */
 /*     } */
 /* }; */
+
+#endif
+

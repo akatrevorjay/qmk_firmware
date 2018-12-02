@@ -14,6 +14,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#ifndef CONFIG_USER_KEYMAP
+#define CONFIG_USER_KEYMAP
+
 #include "planck.h"
 #include "action_layer.h"
 #include "muse.h"
@@ -429,3 +432,6 @@ bool music_mask_user(uint16_t keycode) {
       return true;
   }
 }
+
+#endif
+

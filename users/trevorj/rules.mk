@@ -1,4 +1,3 @@
-
 SRC += trevorj.c
 
 TAP_DANCE_ENABLE = yes
@@ -22,18 +21,21 @@ UNICODE_ENABLE   = yes  # Unicode
 # BLUETOOTH_ENABLE = yes  # Enable Bluetooth with the Adafruit EZ-Key HID
 
 
-# #ifdef TREVORJ_ERGODOX_INFINITY
-# BACKLIGHT_ENABLE = yes  # Enable keyboard backlight functionality
-# VISUALIZER_ENABLE = yes
-#
-# LCD_BACKLIGHT_ENABLE = yes
-# LCD_ENABLE = yes
-#
-# LED_ENABLE = yes
-# SLEEP_LED_ENABLE = yes  # Breathing sleep LED during USB suspend
-# # RGBLIGHT_ENABLE  = yes  # Enable WS2812 RGB underlight.  Do not enable this with audio at the same time.
-#
-# SERIAL_LINK_ENABLE = yes
-# CONSOLE_ENABLE   = yes# Console for debug(+400)
-# AUDIO_ENABLE     = no  # Audio output on port C6
-# #end
+ifdef TREVORJ_ERGODOX_INFINITY
+CONSOLE_ENABLE   = yes  # Console for debug(+400)
+
+BACKLIGHT_ENABLE = yes  # Enable keyboard backlight functionality
+VISUALIZER_ENABLE = yes
+
+LCD_BACKLIGHT_ENABLE = yes
+LCD_ENABLE = yes
+
+LED_ENABLE = yes
+SLEEP_LED_ENABLE = yes  # Breathing sleep LED during USB suspend
+# RGBLIGHT_ENABLE  = yes  # Enable WS2812 RGB underlight.  Do not enable this with audio at the same time.
+
+SERIAL_LINK_ENABLE = yes
+CONSOLE_ENABLE   = yes# Console for debug(+400)
+AUDIO_ENABLE     = no  # Audio output on port C6
+endif
+

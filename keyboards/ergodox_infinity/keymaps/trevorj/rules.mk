@@ -1,3 +1,5 @@
+TREVORJ_ERGODOX_INFINITY = 1
+
 # project specific files
 SRC =	matrix.c \
 	led.c \

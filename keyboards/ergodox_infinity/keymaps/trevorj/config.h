@@ -1,6 +1,8 @@
 #ifndef CONFIG_USER_H
 #define CONFIG_USER_H
 
+#define TREVORJ_ERGODOX_INFINITY 1
+
 #include QMK_KEYBOARD_CONFIG_H
 
 #undef VENDOR_ID
