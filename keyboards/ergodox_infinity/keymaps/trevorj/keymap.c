@@ -24,9 +24,9 @@
 #include "led.h"
 #include "version.h"
 
-#ifndef MIDI_ENABLE
-#error "Midi is not enabled"
-#endif
+/* #ifndef MIDI_ENABLE */
+/* #error "Midi is not enabled" */
+/* #endif */
 
 #include "trevorj.h"
 
