@@ -48,7 +48,7 @@ enum custom_keycodes {
 
 enum keymap_consts {
   BASE = 0,
-  WK,
+  QWERTY,
   // function mouse and media keys
   FNMM,
   // Navigation
@@ -185,38 +185,39 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [BASE] = LAYOUT_ergodox(  // layer 0 : default
     // left hand
     KC_FN0        , KC_1         , KC_2         , KC_3   , KC_4   , KC_5          , KC_6        ,
-    CTL_T(KC_TAB) , KC_Q         , KC_W         , KC_E   , KC_R   , KC_T          , TD(X_CTL)   ,
-    GUI_T(KC_ESC) , KC_A         , KC_S         , KC_D   , KC_F   , KC_G          ,
-    KC_LSFT       , KC_Z         , KC_X         , KC_C   , KC_V   , KC_B          , ALL_T(KC_NO),
+    CTL_T(KC_TAB) , WK_Q         , WK_W         , WK_E   , WK_R   , WK_T          , TD(X_CTL)   ,
+    GUI_T(KC_ESC) , WK_A         , WK_S         , WK_D   , WK_F   , WK_G          ,
+    KC_LSFT       , WK_Z         , WK_X         , WK_C   , WK_V   , WK_B          , ALL_T(KC_NO),
     MO(FNMM)      , KC_LGUI      , KC_LGUI      , KC_LALT, KC_LCTL,
     KC_HOME       , KC_END       ,
     MO(EZ)        ,
     GUI_T(KC_BSPC), ALT_T(KC_DEL), CTL_T(KC_ESC),
     // right hand
     KC_FN0        , KC_6         , KC_7         , KC_8   , KC_9   , KC_0          , KC_BSLS     ,
-    KC_EQL        , KC_Y         , KC_U         , KC_I   , KC_O   , KC_P          , KC_MINS     ,
-    KC_H          , KC_J         , KC_K         , KC_L   , KC_SCLN, KC_QUOT       ,
-    MEH_T(KC_NO)  , KC_N         , KC_M         , KC_COMM, KC_DOT , CTL_T(KC_SLSH), KC_RSFT     ,
+    KC_EQL        , WK_Y         , WK_U         , WK_I   , WK_O   , WK_P          , KC_MINS     ,
+    WK_H          , WK_J         , WK_K         , WK_L   , WK_SCLN, KC_QUOT       ,
+    MEH_T(KC_NO)  , WK_N         , WK_M         , KC_COMM, KC_DOT , CTL_T(KC_SLSH), KC_RSFT     ,
     MO(NAV)       , MO(SYMB)     , KC_LBRC      , KC_RBRC, KC_RCTL,
     KC_PGUP       , KC_LEAD      ,
     KC_PGDN       ,
     MO(NAV)       , ALT_T(KC_ENT), GUI_T(KC_SPC)
 ),
 
-[WK] = LAYOUT_ergodox(        // layer 0 : default
+[QWERTY] = LAYOUT_ergodox(        // layer 1 : qwerty
     KC_TRNS      , KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TRNS      , WK_Q   , WK_W   , WK_E   , WK_R   , WK_T   , KC_TRNS,
-    KC_TRNS      , WK_A   , WK_S   , WK_D   , WK_F   , WK_G   ,
-    KC_TRNS      , WK_Z   , WK_X   , WK_C   , WK_V   , WK_B   , KC_TRNS,
+    KC_TRNS      , KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   , KC_TRNS,
+    KC_TRNS      , KC_A   , KC_S   , KC_D   , KC_F   , KC_G   ,
+    KC_TRNS      , KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , KC_TRNS,
+
     KC_TRNS      , KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS      , KC_TRNS,
     KC_TRNS      ,
     KC_TRNS      , KC_TRNS, KC_TRNS,
     // right hand
     KC_TRNS      , KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TRNS      , WK_Y   , WK_U   , WK_I   , WK_O   , KC_P   , KC_TRNS,
-       WK_H      , WK_J   , WK_K   , WK_K   , WK_SCLN, KC_QUOT,
-    KC_TRNS      , WK_N   , WK_M   , KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS      , KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_TRNS,
+    KC_H      , KC_J   , KC_K   , KC_K   , KC_SCLN, KC_QUOT,
+    KC_TRNS      , KC_N   , KC_M   , KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS      , KC_TRNS, KC_COMM, KC_DOT , KC_SLSH,
     KC_TRNS      , KC_TRNS,
     KC_TRNS      ,
@@ -575,7 +576,7 @@ void matrix_scan_user(void){
     /*   lcd_backlight_hal_color(5000, 2500, 2500); */
     /*   break; */
     /*  */
-    /* case WK: */
+    /* case QWERTY: */
     /*   ergodox_board_led_off(); */
     /*   ergodox_right_led_1_off(); */
     /*   ergodox_right_led_2_off(); */
