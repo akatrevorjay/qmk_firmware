@@ -18,35 +18,35 @@
 
 #include "keymap.h"
 // For software implementation of workman
-#define WK_Q KC_Q
-#define WK_D KC_W
-#define WK_R KC_E
-#define WK_W KC_R
-#define WK_B KC_T
-#define WK_J KC_Y
-#define WK_F KC_U
-#define WK_U KC_I
-#define WK_P KC_O
-#define WK_SCLN KC_P
+#define WK_Q    KC_Q
+#define WK_W    KC_D
+#define WK_E    KC_R
+#define WK_R    KC_W
+#define WK_T    KC_B
+#define WK_Y    KC_J
+#define WK_U    KC_F
+#define WK_I    KC_U
+#define WK_O    KC_P
+#define WK_P KC_SCLN
 
-#define WK_A KC_A
-#define WK_S KC_S
-#define WK_H KC_D
-#define WK_T KC_F
-#define WK_G KC_G
-#define WK_Y KC_H
-#define WK_N KC_J
-#define WK_E KC_K
-#define WK_O KC_L
-#define WK_I KC_SCLN
+#define WK_A    KC_A
+#define WK_S    KC_S
+#define WK_D    KC_H
+#define WK_F    KC_T
+#define WK_G    KC_G
+#define WK_H    KC_Y
+#define WK_J    KC_N
+#define WK_K    KC_E
+#define WK_L    KC_O
+#define WK_SCLN    KC_I
 
-#define WK_Z KC_Z
-#define WK_X KC_X
-#define WK_M KC_C
-#define WK_C KC_V
-#define WK_V KC_B
-#define WK_K KC_N
-#define WK_L KC_M
+#define WK_Z    KC_Z
+#define WK_X    KC_X
+#define WK_C    KC_M
+#define WK_V    KC_C
+#define WK_B    KC_V
+#define WK_N    KC_K
+#define WK_M    KC_L
 
 // Make it easy to support these in macros
 // TODO: change macro implementation so these aren't needed
