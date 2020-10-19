@@ -200,7 +200,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     MO(NAV)       , MO(SYMB)     , KC_LBRC      , KC_RBRC, KC_RCTL,
     KC_PGUP       , KC_LEAD      ,
     KC_PGDN       ,
-    MO(NAV)       , ALT_T(KC_ENT), GUI_T(KC_SPC)
+    MO(FNMM)      , ALT_T(KC_ENT), GUI_T(KC_SPC)
 ),
 
 [QWERTY] = LAYOUT_ergodox(        // layer 1 : qwerty
