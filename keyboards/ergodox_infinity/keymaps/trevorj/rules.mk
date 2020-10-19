@@ -2,8 +2,8 @@ TREVORJ_ERGODOX_INFINITY = 1
 
 # project specific files
 SRC =	matrix.c \
-	led.c \
-	$(CHIBIOS)/os/various/syscalls.c
+	led.c
+	# $(CHIBIOS)/os/various/syscalls.c
 
 TAP_DANCE_ENABLE = yes
 # KEY_LOCK_ENABLE = yes
