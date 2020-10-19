@@ -684,5 +684,18 @@ SEQ_THREE_KEYS(KC_A, KC_S, KC_D) {
 /*     } */
 /* }; */
 
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case SFT_T(KC_SPC):
+            return TAPPING_TERM + 1250;
+        /* case LT(1, KC_GRV): */
+        /*     return 130; */
+        case GUI_T(KC_BSPC):
+            return TAPPING_TERM + 1250;
+        default:
+            return TAPPING_TERM;
+    }
+}
+
 #endif
 

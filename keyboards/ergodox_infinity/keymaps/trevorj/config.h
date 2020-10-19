@@ -50,7 +50,9 @@
 /* #define TAPPING_TERM 200 // how long before a tap becomes a hold */
 /* #define TAPPING_TOGGLE 2 // how many taps before triggering the toggle */
 
-#define PERMISSIVE_HOLD // makes tap and hold keys work better for fast typers who don't want tapping term set above 500
+#define TAPPING_TERM_PER_KEY
+
+// #define PERMISSIVE_HOLD // makes tap and hold keys work better for fast typers who don't want tapping term set above 500
 
 #define LEADER_TIMEOUT 300 // how long before the leader key times out
 
